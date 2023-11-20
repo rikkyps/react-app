@@ -1,11 +1,11 @@
 import './App.css';
-import Rendering from './Rendering';
+import Event from './Event';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Rendering/>
+        <Event/>
       </header>
     </div>
   );

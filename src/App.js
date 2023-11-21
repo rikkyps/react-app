@@ -1,11 +1,11 @@
 import './App.css';
-import Event from './Event';
+import AllEvent from './AllEvent';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Event/>
+        <AllEvent/>
       </header>
     </div>
   );

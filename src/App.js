@@ -1,11 +1,11 @@
 import './App.css';
-import AllEvent from './AllEvent';
+import ControlledForm from './ControlledForm';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AllEvent/>
+        <ControlledForm />
       </header>
     </div>
   );

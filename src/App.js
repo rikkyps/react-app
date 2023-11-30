@@ -1,11 +1,11 @@
 import './App.css';
-import ControlledForm from './ControlledForm';
+import MultiForm from './MultiForm';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ControlledForm />
+        <MultiForm/>
       </header>
     </div>
   );

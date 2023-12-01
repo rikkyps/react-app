@@ -1,11 +1,11 @@
 import './App.css';
-import MultiForm from './MultiForm';
+import UseEffect from './Hooks/UseEffect';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <MultiForm/>
+        <UseEffect/>
       </header>
     </div>
   );

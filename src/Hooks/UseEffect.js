@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-// Pure function adalah sebuah fungsi yg nilainya tidak terpengaruh dengan deklarasi variable di luar fungsi tersebut
-// Sedangkan effect adalah sebaliknya
-// Contoh deklarasi pure component
-const Editing = ({ value }) => {
+const UseEffect = () => {
 
-    //Contoh dari deklarasi non pure function atau effect
-    let number = 0
-    function jumlah(tambah) {
-        number = number + tambah
-        return number
-    }
+    //Deklarasi hooks state
+    let [value, setValue] = React.useState(""),
+        [seconds, setSeconds] = React.useState(0)
 
-    //Contoh deklarasi pure function
-    function hitung(a, b) {
-        return a + b
-    }
-
-    return <textarea value={value} />
-}
-
-const Editing2 = () => {
-    let [text, setText] = React.useState('')
-
+    //effect 1
     useEffect(function () {
-        if (text.length) localStorage.setItem('edit-text', text)
-    })
+        if (value.length) localStorage.setItem('edit-text', value)
+    }, [value])
 
+    //effect 2
     useEffect(function () {
-        setText(localStorage.getItem("edit-text"))
+        setValue(localStorage.getItem('edit-text'))
+        let intervalId = setInterval(() => {
+            setSeconds(second => second +1)
+        }, 1000)
+        
+
+        //Untuk fungsi yang dijalankan continue baiknya selalu menggunakan clean up function
+        return function() {
+            clearInterval(intervalId)
+        }
     }, [])
 
-    return <textarea type="text" value={text} onChange={(e) => setText(e.target.value)} />
+    return (
+        <>
+            Waktu: {Math.floor(seconds / 60)} menit {seconds % 60} detik
+            <br />
+            <textarea value={value} onChange={(e) => setValue(e.target.value)} />
+        </>
+    )
 }
 
-export default Editing2
+export default UseEffect

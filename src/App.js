@@ -1,11 +1,11 @@
 import './App.css';
-import UseEffect from './Hooks/UseEffect';
+import Context from './UseContext/UseContext';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <UseEffect/>
+        <Context/>
       </header>
     </div>
   );
